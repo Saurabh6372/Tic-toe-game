@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  background: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #FFC107; /* Yellow */
+  font-size: 2.5em;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  background: #fff;
+  border: 3px solid #FFC107;
+  border-radius: 10px;
+  width: 100%;
+  padding-top: 100%; /* Maintain square aspect ratio */
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  background-color: #FFF8E1;
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+.cell span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  color: #FFC107;
+}
+
+.cell.winner {
+  background-color: #FFF176;
+  border-color: #FBC02D;
+}
+
+.message {
+  margin-top: 10px;
+}
+
+.message p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #FFC107;
+}
+
+#resetBtn {
+  background: #FFC107;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#resetBtn:hover {
+  background: #FFB300;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #FFC107;
+  width: 100%;
+  padding: 10px 0;
+  background: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  .cell span {
+    font-size: 2em;
+  }
+}
